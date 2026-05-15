@@ -1,182 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy - Word Wizards</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – OwlZee: Grammar Games for Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --purple:     #6C3CE2;
+      --purple-lt:  #8B5CF6;
+      --purple-dk:  #4C1D95;
+      --gold:       #F59E0B;
+      --gold-lt:    #FDE68A;
+      --bg:         #0F0A1E;
+      --surface:    #1A1035;
+      --card:       #231A4A;
+      --border:     rgba(139,92,246,0.25);
+      --text:       #E8E0FF;
+      --muted:      #9D8FC8;
+      --green:      #34D399;
+      --red:        #F87171;
+      --blue:       #60A5FA;
+    }
 
-<style>
-body{
-font-family: Arial, Helvetica, sans-serif;
-margin:0;
-padding:0;
-background:#f5f7fb;
-color:#333;
-line-height:1.6;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.header{
-background:linear-gradient(135deg,#5c6cff,#4bb8ff);
-color:white;
-padding:50px 20px;
-text-align:center;
-}
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
 
-.header h1{
-margin:0;
-font-size:36px;
-}
+    /* ─── Stars BG ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 20%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 80%, rgba(255,255,255,.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 85%, rgba(255,255,255,.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 55%, rgba(255,255,255,.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 35%, rgba(245,158,11,.6) 0%, transparent 100%),
+        radial-gradient(2px 2px at 15% 65%, rgba(139,92,246,.5) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:30px 20px;
-background:white;
-box-shadow:0 8px 30px rgba(0,0,0,0.05);
-border-radius:10px;
-margin-top:-40px;
-}
+    /* ─── Hero ─── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 60px 24px 48px;
+      background: linear-gradient(180deg, #1A0A3E 0%, transparent 100%);
+      border-bottom: 1px solid var(--border);
+    }
 
-h2{
-color:#4b4bff;
-margin-top:30px;
-}
+    .owl-icon {
+      font-size: 72px;
+      display: block;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 24px rgba(139,92,246,.8));
+      animation: float 3s ease-in-out infinite;
+    }
 
-.highlight{
-background:#eef3ff;
-padding:15px;
-border-left:4px solid #4b4bff;
-border-radius:6px;
-}
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
 
-.footer{
-text-align:center;
-margin-top:40px;
-padding:20px;
-font-size:14px;
-color:#777;
-}
+    .hero h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
 
-.company-box{
-background:#f9fbff;
-padding:20px;
-border-radius:8px;
-margin-bottom:20px;
-border:1px solid #e6ecff;
-}
+    .hero h1 span { color: var(--gold); }
 
-</style>
+    .hero .subtitle {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+      color: var(--gold);
+    }
+
+    /* ─── Layout ─── */
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ─── TOC ─── */
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .toc h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 8px;
+    }
+
+    .toc ol li { counter-increment: toc; }
+
+    .toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--purple-lt);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 4px 0;
+      transition: color .2s;
+    }
+
+    .toc ol li a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      color: var(--gold);
+      background: rgba(245,158,11,.15);
+      border-radius: 4px;
+      padding: 1px 6px;
+      flex-shrink: 0;
+    }
+
+    .toc ol li a:hover { color: #fff; }
+
+    /* ─── Sections ─── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 24px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+      filter: drop-shadow(0 0 8px rgba(139,92,246,.5));
+    }
+
+    .section h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .section p, .section li {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child, .section li:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .section li { margin-bottom: 8px; }
+
+    strong { color: var(--text); font-weight: 700; }
+
+    /* ─── Highlight boxes ─── */
+    .highlight {
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight.green {
+      background: rgba(52,211,153,.08);
+      border: 1px solid rgba(52,211,153,.3);
+      color: var(--green);
+    }
+
+    .highlight.gold {
+      background: rgba(245,158,11,.08);
+      border: 1px solid rgba(245,158,11,.3);
+      color: var(--gold);
+    }
+
+    .highlight.blue {
+      background: rgba(96,165,250,.08);
+      border: 1px solid rgba(96,165,250,.3);
+      color: var(--blue);
+    }
+
+    .highlight.red {
+      background: rgba(248,113,113,.08);
+      border: 1px solid rgba(248,113,113,.3);
+      color: var(--red);
+    }
+
+    .highlight strong { color: inherit; }
+
+    /* ─── Data table ─── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: var(--card);
+      color: var(--gold);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid rgba(139,92,246,.1);
+      color: var(--muted);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 600; }
+
+    /* ─── Pill tags ─── */
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .pill.no   { background: rgba(52,211,153,.15); color: var(--green); border: 1px solid rgba(52,211,153,.3); }
+    .pill.yes  { background: rgba(248,113,113,.15); color: var(--red);   border: 1px solid rgba(248,113,113,.3); }
+    .pill.opt  { background: rgba(245,158,11,.15);  color: var(--gold);  border: 1px solid rgba(245,158,11,.3); }
+
+    /* ─── Contact card ─── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--purple-dk), var(--purple));
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .contact-card .owl { font-size: 48px; }
+
+    .contact-card h3 {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .contact-card a {
+      color: var(--gold-lt);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ─── Footer ─── */
+    .footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer strong { color: var(--purple-lt); }
+
+    /* ─── Divider ─── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      .section { padding: 24px 20px; }
+      .toc { padding: 20px; }
+      .contact-card { padding: 20px; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="header">
-<h1>Privacy Policy</h1>
-<p>Word Wizards – Kids Learning Game</p>
+<!-- ─── HERO ─── -->
+<header class="hero">
+  <span class="owl-icon">🦉</span>
+  <h1>Privacy Policy<br><span>OwlZee: Grammar Games for Kids</span></h1>
+  <p class="subtitle">By Nishaan Tech &nbsp;·&nbsp; Effective Date: May 15, 2026</p>
+  <div class="badge-row">
+    <span class="badge">✅ No Personal Data Collected</span>
+    <span class="badge">🚫 No Ads</span>
+    <span class="badge">🚫 No In-App Purchases</span>
+    <span class="badge">🔒 COPPA Compliant</span>
+    <span class="badge">👶 Ages 6–10</span>
+  </div>
+</header>
+
+<!-- ─── CONTENT ─── -->
+<div class="wrapper">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <h2>📋 Table of Contents</h2>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#who-we-are">Who We Are</a></li>
+      <li><a href="#data-collected">Data We Collect</a></li>
+      <li><a href="#data-not-collected">Data We Do NOT Collect</a></li>
+      <li><a href="#how-data-used">How Data Is Used</a></li>
+      <li><a href="#data-storage">Data Storage</a></li>
+      <li><a href="#third-parties">Third Parties</a></li>
+      <li><a href="#children">Children's Privacy (COPPA)</a></li>
+      <li><a href="#parental-rights">Parental Rights</a></li>
+      <li><a href="#analytics">Anonymous Analytics</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Overview -->
+  <section class="section" id="overview">
+    <div class="section-header">
+      <span class="section-icon">📖</span>
+      <h2>1. Overview</h2>
+    </div>
+    <p>Welcome to <strong>OwlZee: Grammar Games for Kids</strong>, an English grammar learning app designed for children aged 3–10. OwlZee is developed and published by <strong>Nishaan Tech</strong>, an independent app studio based in India.</p>
+    <p>We take the privacy and safety of children extremely seriously. This Privacy Policy explains what information OwlZee collects (very little), what it does not collect, and how we protect your child's experience.</p>
+    <div class="highlight green">
+      <strong>Short version:</strong> OwlZee does not collect, store, or share any personal information about your child. All game progress is stored locally on your device only.
+    </div>
+  </section>
+
+  <!-- 2. Who We Are -->
+  <section class="section" id="who-we-are">
+    <div class="section-header">
+      <span class="section-icon">🏢</span>
+      <h2>2. Who We Are</h2>
+    </div>
+    <table class="data-table">
+      <tr><th>Detail</th><th>Information</th></tr>
+      <tr><td>Developer / Publisher</td><td>Nishaan Tech</td></tr>
+      <tr><td>App Name</td><td>OwlZee: Grammar Games for Kids</td></tr>
+      <tr><td>Platform</td><td>Android (Google Play Store)</td></tr>
+      <tr><td>Target Audience</td><td>Children aged 3–10 years</td></tr>
+      <tr><td>Contact Email</td><td><a href="mailto:nitinsameer@gmail.com" style="color:var(--purple-lt)">nitinsameer@gmail.com</a></td></tr>
+      <tr><td>Country</td><td>India</td></tr>
+    </table>
+  </section>
+
+  <!-- 3. Data We Collect -->
+  <section class="section" id="data-collected">
+    <div class="section-header">
+      <span class="section-icon">📊</span>
+      <h2>3. Data We Collect</h2>
+    </div>
+    <p>OwlZee collects only the minimal data needed for the app to function. All data stays on your device.</p>
+
+    <table class="data-table">
+      <tr>
+        <th>Data Type</th>
+        <th>What It Is</th>
+        <th>Where Stored</th>
+        <th>Collected?</th>
+      </tr>
+      <tr>
+        <td>Nickname</td>
+        <td>Optional name entered at setup (e.g. "Ishaan")</td>
+        <td>Device only</td>
+        <td><span class="pill opt">Optional</span></td>
+      </tr>
+      <tr>
+        <td>Game Progress</td>
+        <td>Stars, coins, levels completed, world progress</td>
+        <td>Device only</td>
+        <td><span class="pill yes">Local only</span></td>
+      </tr>
+      <tr>
+        <td>Streak & Badges</td>
+        <td>Daily streak count, earned badges</td>
+        <td>Device only</td>
+        <td><span class="pill yes">Local only</span></td>
+      </tr>
+      <tr>
+        <td>Settings Preferences</td>
+        <td>Sound on/off, haptics on/off</td>
+        <td>Device only</td>
+        <td><span class="pill yes">Local only</span></td>
+      </tr>
+      <tr>
+        <td>Anonymous Analytics</td>
+        <td>Crash reports, app performance — no personal data</td>
+        <td>Firebase (optional)</td>
+        <td><span class="pill opt">Parent opt-in</span></td>
+      </tr>
+    </table>
+
+    <div class="highlight gold">
+      <strong>Important:</strong> The nickname entered by the child is stored only on the device. It is never transmitted to our servers or any third party.
+    </div>
+  </section>
+
+  <!-- 4. Data We Do NOT Collect -->
+  <section class="section" id="data-not-collected">
+    <div class="section-header">
+      <span class="section-icon">🚫</span>
+      <h2>4. Data We Do NOT Collect</h2>
+    </div>
+    <p>OwlZee is designed with a <strong>privacy-first, no-data</strong> approach. We explicitly do not collect:</p>
+    <ul>
+      <li>❌ Full name, email address, or phone number</li>
+      <li>❌ Date of birth or age verification data</li>
+      <li>❌ Device identifiers (IMEI, Advertising ID)</li>
+      <li>❌ Location data (GPS or IP-based)</li>
+      <li>❌ Photos, camera, or microphone access</li>
+      <li>❌ Contacts or social connections</li>
+      <li>❌ Payment or financial information</li>
+      <li>❌ Browsing history or cross-app tracking</li>
+      <li>❌ Voice recordings or audio</li>
+      <li>❌ Any biometric data</li>
+    </ul>
+    <div class="highlight green">
+      <strong>No account required.</strong> OwlZee does not require users to create an account, log in, or register. There is no sign-up flow.
+    </div>
+  </section>
+
+  <!-- 5. How Data Is Used -->
+  <section class="section" id="how-data-used">
+    <div class="section-header">
+      <span class="section-icon">⚙️</span>
+      <h2>5. How Data Is Used</h2>
+    </div>
+    <p>The limited local data stored on your device is used solely to:</p>
+    <ul>
+      <li>Display the child's nickname and personalise the experience</li>
+      <li>Save and restore game progress across sessions</li>
+      <li>Track stars, coins, XP, streaks, and badges earned</li>
+      <li>Show the Parent Dashboard with learning progress</li>
+      <li>Remember sound and haptic preferences</li>
+    </ul>
+    <div class="highlight blue">
+      <strong>We never use data for advertising, profiling, or any commercial purpose.</strong> There are no targeted ads in OwlZee.
+    </div>
+  </section>
+
+  <!-- 6. Data Storage -->
+  <section class="section" id="data-storage">
+    <div class="section-header">
+      <span class="section-icon">💾</span>
+      <h2>6. Data Storage & Retention</h2>
+    </div>
+    <p>All game data is stored <strong>locally on the child's device</strong> using Android's secure local storage (Room Database / SharedPreferences).</p>
+    <ul>
+      <li>Data is <strong>never uploaded</strong> to Nishaan Tech servers</li>
+      <li>Data is <strong>never synced</strong> to cloud services</li>
+      <li>Data is <strong>never backed up</strong> to Google Drive or any external service</li>
+      <li>Uninstalling the app permanently deletes all local data</li>
+      <li>Parents can also use the "Reset Progress" option within the app</li>
+    </ul>
+    <div class="highlight gold">
+      <strong>Data deletion:</strong> To delete all data, simply uninstall OwlZee from the device. All locally stored data is permanently removed.
+    </div>
+  </section>
+
+  <!-- 7. Third Parties -->
+  <section class="section" id="third-parties">
+    <div class="section-header">
+      <span class="section-icon">🔗</span>
+      <h2>7. Third-Party Services</h2>
+    </div>
+    <p>OwlZee uses minimal third-party services. We do not use any advertising SDKs or social media integrations.</p>
+
+    <table class="data-table">
+      <tr>
+        <th>Service</th>
+        <th>Purpose</th>
+        <th>Data Shared</th>
+        <th>Required?</th>
+      </tr>
+      <tr>
+        <td>Firebase Crashlytics</td>
+        <td>Anonymous crash reporting to fix bugs</td>
+        <td>Anonymous crash logs only — no personal data</td>
+        <td><span class="pill opt">Parent opt-in</span></td>
+      </tr>
+      <tr>
+        <td>Google Play Services</td>
+        <td>App distribution and updates</td>
+        <td>Governed by Google's Privacy Policy</td>
+        <td><span class="pill yes">Platform</span></td>
+      </tr>
+    </table>
+
+    <div class="highlight green">
+      <strong>No advertising networks. No social media SDKs. No analytics without parental consent.</strong>
+    </div>
+    <p>Firebase Crashlytics is enabled only if the parent/guardian checks the optional analytics consent box during first-time setup. If not consented, no data is sent to Firebase.</p>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section class="section" id="children">
+    <div class="section-header">
+      <span class="section-icon">👶</span>
+      <h2>8. Children's Privacy (COPPA Compliance)</h2>
+    </div>
+    <p>OwlZee is designed specifically for children aged <strong>3–10 years</strong>. We comply with the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and Google Play's Families Policy.</p>
+    <ul>
+      <li>We do not knowingly collect personal information from children under 13</li>
+      <li>We do not allow children to communicate with other users</li>
+      <li>We do not include social features, chats, or forums</li>
+      <li>We do not display behavioural or interest-based advertising</li>
+      <li>We do not link to external websites from within the app</li>
+      <li>Parental consent is sought before any optional data collection</li>
+    </ul>
+    <div class="highlight green">
+      OwlZee complies with <strong>Google Play's Families Policy</strong> and is designed to be safe for children without any parental supervision concerns.
+    </div>
+    <p>The app features a <strong>Parent / Guardian Consent screen</strong> on first launch, requiring a parent to confirm consent before the child can use the app. This screen is designed to be completed by an adult.</p>
+  </section>
+
+  <!-- 9. Parental Rights -->
+  <section class="section" id="parental-rights">
+    <div class="section-header">
+      <span class="section-icon">👪</span>
+      <h2>9. Parental Rights & Controls</h2>
+    </div>
+    <p>As a parent or guardian, you have full control over your child's data and experience in OwlZee:</p>
+
+    <ul>
+      <li><strong>View Progress:</strong> Use the Parent Dashboard within the app (Settings → Parent Dashboard) to view your child's learning progress, accuracy, streaks, and badges</li>
+      <li><strong>Manage Settings:</strong> Enable or disable sound effects, background music, and haptic feedback at any time</li>
+      <li><strong>Withdraw Analytics Consent:</strong> Contact us at <a href="mailto:nitinsameer@gmail.com" style="color:var(--purple-lt)">nitinsameer@gmail.com</a> to withdraw optional analytics consent</li>
+      <li><strong>Delete All Data:</strong> Uninstall the app from the device to permanently delete all locally stored data</li>
+      <li><strong>Contact Us:</strong> Email us with any privacy concerns and we will respond within 5 business days</li>
+    </ul>
+
+    <div class="highlight blue">
+      <strong>Parents can request data deletion or ask privacy questions</strong> by emailing <a href="mailto:nitinsameer@gmail.com" style="color:var(--blue)">nitinsameer@gmail.com</a>. We will respond within 5 business days.
+    </div>
+  </section>
+
+  <!-- 10. Analytics -->
+  <section class="section" id="analytics">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <h2>10. Anonymous Analytics (Optional)</h2>
+    </div>
+    <p>During first-time setup, parents are given the <strong>option</strong> to allow anonymous usage analytics. This is entirely voluntary and the app works fully without it.</p>
+    <p>If opted in, we may collect:</p>
+    <ul>
+      <li>App crash reports (no personal data, just error logs)</li>
+      <li>General usage patterns (e.g. which worlds are played most)</li>
+      <li>Device type and Android version (for compatibility)</li>
+    </ul>
+    <div class="highlight gold">
+      <strong>This data is completely anonymous.</strong> It cannot be used to identify any individual child or user. It is used only to improve app stability and content quality.
+    </div>
+    <p>This analytics consent can be withdrawn at any time by emailing <a href="mailto:nitinsameer@gmail.com" style="color:var(--purple-lt)">nitinsameer@gmail.com</a>.</p>
+  </section>
+
+  <!-- 11. Security -->
+  <section class="section" id="security">
+    <div class="section-header">
+      <span class="section-icon">🔒</span>
+      <h2>11. Security</h2>
+    </div>
+    <p>We take reasonable measures to protect data within OwlZee:</p>
+    <ul>
+      <li>All data is stored using Android's secure local storage mechanisms</li>
+      <li>The app does not transmit personal data over the internet</li>
+      <li>No user accounts means no password or credential risks</li>
+      <li>The app does not require internet connectivity to function</li>
+      <li>We regularly review and update the app for security vulnerabilities</li>
+    </ul>
+    <div class="highlight blue">
+      Since OwlZee stores all data locally and collects no personal information, the attack surface for data breaches is essentially zero.
+    </div>
+  </section>
+
+  <!-- 12. Changes -->
+  <section class="section" id="changes">
+    <div class="section-header">
+      <span class="section-icon">📝</span>
+      <h2>12. Changes to This Policy</h2>
+    </div>
+    <p>We may update this Privacy Policy from time to time. When we do:</p>
+    <ul>
+      <li>The updated policy will be posted at this URL</li>
+      <li>The "Effective Date" at the top will be updated</li>
+      <li>For significant changes, we will notify users through a Play Store update notice</li>
+      <li>Continued use of the app after changes constitutes acceptance of the new policy</li>
+    </ul>
+    <p>We encourage parents to review this policy periodically. This policy was last updated on <strong>May 15, 2026</strong>.</p>
+  </section>
+
+  <!-- 13. Contact -->
+  <section class="section" id="contact">
+    <div class="section-header">
+      <span class="section-icon">📬</span>
+      <h2>13. Contact Us</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests about this Privacy Policy or your child's data, please contact us:</p>
+    <div class="contact-card">
+      <div class="owl">🦉</div>
+      <div>
+        <h3>Nishaan Tech</h3>
+        <p style="color:rgba(255,255,255,.7); font-size:14px; margin-bottom:8px;">Developer of OwlZee: Grammar Games for Kids</p>
+        <a href="mailto:nitinsameer@gmail.com">nitinsameer@gmail.com</a>
+        <p style="color:rgba(255,255,255,.5); font-size:13px; margin-top:6px;">We respond within 5 business days</p>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-<div class="container">
-
-<p><strong>Last Updated:</strong> April 2026</p>
-
-<div class="company-box">
-<h2>About the Company</h2>
-
-<p>
-<strong>Nishaan Tech</strong> is the developer and publisher of the mobile application <strong>Word Wizards</strong>. We are committed to providing a fun and educational gaming experience while respecting your privacy. This Privacy Policy outlines how we collect, use, and protect your information when you use our app.
-</p>
-
-<p>
-Nishaan Tech focuses on building educational, safe, and engaging mobile applications designed to help children learn through interactive gameplay and digital experiences.
-</p>
-
-<p>
-Our mission is to make learning enjoyable by combining education with creative game mechanics that inspire curiosity and exploration.
-</p>
-
-</div>
-
-<h2>1. Information We Collect</h2>
-
-<div class="highlight">
-We do <strong>NOT collect personal information</strong> from users or children.
-</div>
-
-<p>The application does not request or store:</p>
-
-<ul>
-<li>Name</li>
-<li>Email address</li>
-<li>Phone number</li>
-<li>Location information</li>
-<li>Contacts or personal data</li>
-</ul>
-
-<h2>2. Children's Privacy</h2>
-
-<p>
-Word Wizards is designed for children and follows policies for child-directed applications.
-</p>
-
-<p>
-Nishaan Tech does not knowingly collect personal information from children under the age of 13.
-</p>
-
-<p>
-If a parent or guardian believes that a child has provided personal information, please contact us so we can remove it immediately.
-</p>
-
-<h2>3. App Permissions</h2>
-
-<p>The application may request basic permissions such as:</p>
-
-<ul>
-<li>Internet access – used only for app updates or optional online features</li>
-</ul>
-
-<p>
-These permissions are used solely to improve the user experience and are not used to collect personal information.
-</p>
-
-<h2>4. Third-Party Services</h2>
-
-<p>
-The current version of Word Wizards does not use third-party advertising or analytics services that collect personal information.
-</p>
-
-<p>
-If third-party services are introduced in future versions, this privacy policy will be updated accordingly.
-</p>
-
-<h2>5. Data Security</h2>
-
-<p>
-Nishaan Tech takes reasonable technical and organizational measures to ensure that the application remains safe and secure for all users.
-</p>
-
-<h2>6. Changes to This Privacy Policy</h2>
-
-<p>
-Nishaan Tech may update this Privacy Policy from time to time.
-Any updates will be posted on this page with a revised update date.
-</p>
-
-<h2>7. Contact Information</h2>
-
-<p>
-If you have any questions regarding this Privacy Policy, please contact us:
-</p>
-
-<p>
-<strong>Company:</strong> Nishaan Tech<br>
-<strong>Email:</strong> nitinsameer@gmail.com
-</p>
-
-</div>
-
-<div class="footer">
-© 2026 Nishaan Tech. All rights reserved.
-</div>
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <p>🦉 <strong>OwlZee: Grammar Games for Kids</strong> &nbsp;·&nbsp; © 2026 Nishaan Tech &nbsp;·&nbsp; All Rights Reserved</p>
+  <p style="margin-top:8px;">This Privacy Policy was written to comply with Google Play Store requirements, COPPA, and Google Play Families Policy.</p>
+</footer>
 
 </body>
 </html>
